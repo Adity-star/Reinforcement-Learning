@@ -67,7 +67,7 @@ Watch the Lunar Lander agent in action as it learns to land on the Moon 🌕! Th
 
 
 <video width="600" controls>
-  <source src="https://github.com/Aditystar/ReinforcementLearning/blob/main/Intro%20to%20RL/replay.mp4" type="video/mp4">
+  <source src="Intro to RL/replay.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
