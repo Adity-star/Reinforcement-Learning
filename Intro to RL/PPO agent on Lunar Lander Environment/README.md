@@ -66,7 +66,11 @@ The agent progressively learns to land the Lunar Lander with increasing precisio
 Watch the Lunar Lander agent in action as it learns to land on the Moon 🌕! The video below demonstrates how the agent improves over time:
 
 
-<video controls autoplay><source src="https://huggingface.co/sb3/ppo-LunarLander-v2/resolve/main/replay.mp4" type="video/mp4"></video>
+<video width="600" controls>
+  <source src="https://github.com/Aditystar/ReinforcementLearning/blob/main/Intro%20to%20RL/replay.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 
 ---
 
