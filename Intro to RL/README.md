@@ -1,56 +1,77 @@
 # Introduction to Deep Reinforcement Learning
 
+## Table of Contents
+
+1. [Introduction](#introduction)
+2. [What is Reinforcement Learning?](#what-is-reinforcement-learning)
+3. [The Reinforcement Learning Framework](#the-reinforcement-learning-framework)
+4. [Types of Tasks in Reinforcement Learning](#types-of-tasks-in-reinforcement-learning)
+5. [The Exploration/Exploitation Tradeoff](#the-explorationexploitation-tradeoff)
+6. [The Two Main Approaches for Solving RL Problems](#the-two-main-approaches-for-solving-rl-problems)
+7. [The “Deep” in Deep Reinforcement Learning](#the-deep-in-deep-reinforcement-learning)
+8. [Summary](#summary)
+9. [References](#references)
+
+---
+
 ## Introduction
 
-Deep Reinforcement Learning (DRL) is a powerful subfield of artificial intelligence (AI) that combines Reinforcement Learning (RL) with deep learning techniques. DRL has gained significant attention due to its successful application in complex tasks like playing video games, autonomous driving, and robotics. This document provides an introduction to the core concepts of DRL, explaining it in a simple and understandable way.
+Deep Reinforcement Learning (DRL) is an exciting field in artificial intelligence (AI) that combines traditional Reinforcement Learning (RL) with deep learning techniques. This powerful combination allows agents to learn complex behaviors from scratch by interacting with an environment. DRL is behind the success of AI in applications such as game-playing agents (e.g., AlphaGo), autonomous vehicles, and robotic control.
+
+[Back to Table of Contents](#table-of-contents)
 
 ---
 
 ## What is Reinforcement Learning?
 
-Reinforcement Learning (RL) is a type of machine learning where an agent learns to make decisions by interacting with an environment. The goal of the agent is to maximize a reward signal through trial and error. It learns which actions to take in different situations by receiving feedback in the form of rewards or penalties. Unlike supervised learning, where the model learns from labeled data, RL focuses on learning from its own experiences.
+Reinforcement Learning (RL) is a type of machine learning where an agent learns how to achieve a goal by interacting with an environment and receiving feedback. The agent tries different actions and learns from rewards or penalties associated with those actions.
 
-In RL:
-- The **agent** is the decision maker (e.g., a robot, a game character).
-- The **environment** is everything the agent interacts with (e.g., the game world, real-world environment).
-- The **state** represents the current situation of the agent in the environment.
-- The **action** is the choice the agent makes at any given time.
-- The **reward** is feedback from the environment based on the agent's action.
+### Key Concepts in RL:
+- **Agent**: The learner or decision maker.
+- **Environment**: The system the agent interacts with.
+- **State (s)**: The condition of the environment at a given time.
+- **Action (a)**: The choice made by the agent.
+- **Reward (r)**: The feedback received after taking an action.
+
+The goal is to maximize the cumulative reward over time by making the right decisions at each state.
+
+[Back to Table of Contents](#table-of-contents)
 
 ---
 
 ## The Reinforcement Learning Framework
 
-The RL framework can be broken down into the following elements:
+In RL, the agent interacts with the environment in the following steps:
 
-1. **Agent**: The learner or decision maker.
-2. **Environment**: Everything the agent interacts with.
-3. **State (s)**: A snapshot of the environment at a given time.
-4. **Action (a)**: The decision made by the agent.
-5. **Reward (r)**: The feedback the agent receives after taking an action.
-6. **Policy (π)**: A strategy used by the agent to determine the next action based on the current state.
-7. **Value function (V)**: A function that estimates how good a state or action is.
-8. **Q-value (Q)**: A function that estimates the total future reward the agent can expect for a given state-action pair.
+1. **Agent**: Makes decisions based on the current state.
+2. **State (s)**: The environment's current configuration.
+3. **Action (a)**: The decision taken by the agent.
+4. **Reward (r)**: The feedback from the environment.
+5. **Policy (π)**: A strategy that defines the action to take based on the state.
+6. **Value Function (V)**: Estimates the long-term reward of being in a state.
+7. **Q-Value (Q)**: Estimates the long-term reward of taking an action in a specific state.
 
-The agent interacts with the environment, takes actions, receives rewards, and updates its policy to improve future decision-making.
+[Back to Table of Contents](#table-of-contents)
 
 ---
 
 ## Types of Tasks in Reinforcement Learning
 
-RL problems can be categorized into different types of tasks:
+RL problems can be categorized by their task types:
 
-1. **Discrete vs. Continuous**:
-   - **Discrete**: The state and action spaces are finite and countable (e.g., moving a character in a grid).
-   - **Continuous**: The state and action spaces are infinite or uncountable (e.g., controlling a robot arm).
+1. **Discrete vs. Continuous Tasks**
+   - **Discrete**: Finite states and actions (e.g., grid-based games).
+   - **Continuous**: Infinite or uncountable states/actions (e.g., robotic arm control).
 
-2. **Single-agent vs. Multi-agent**:
-   - **Single-agent**: Only one agent interacts with the environment.
-   - **Multi-agent**: Multiple agents interact with the environment, possibly competing or collaborating.
+2. **Single-agent vs. Multi-agent Tasks**
+   - **Single-agent**: One agent interacts with the environment.
+   - **Multi-agent**: Multiple agents interact, potentially competing or collaborating.
 
-3. **Episodic vs. Continuing**:
-   - **Episodic**: The task is divided into episodes, with each episode ending in a terminal state (e.g., a game round).
-   - **Continuing**: The agent continuously interacts with the environment without a clear end (e.g., driving a car).
+3. **Episodic vs. Continuing Tasks**
+   - **Episodic**: The task is divided into episodes that end with a terminal state (e.g., game rounds).
+   - **Continuing**: The agent interacts with the environment continuously without a clear endpoint (e.g., driving).
+
+[Back to Table of Contents](#table-of-contents)
 
 ---
 
@@ -63,6 +84,8 @@ One of the fundamental challenges in RL is the **exploration vs. exploitation** 
 
 The agent must balance between exploring new actions and exploiting the actions that are known to yield high rewards. Too much exploration can lead to inefficient learning, while too much exploitation can prevent the agent from discovering better strategies.
 
+[Back to Table of Contents](#table-of-contents)
+
 ---
 
 ## The Two Main Approaches for Solving RL Problems
@@ -71,11 +94,21 @@ There are two main approaches to solving RL problems:
 
 1. **Model-Free Methods**:
    - These methods do not assume a model of the environment. The agent learns by trial and error, adjusting its behavior based on received rewards.
-   - **Examples**: Q-Learning, Policy Gradient methods, Actor-Critic methods.
+   - Examples.
+      - **Value-based methods**: The agent learns a value function, such as Q-learning, where the agent tries to estimate the expected return for each state-action pair.
 
+      - **Policy-based methods**: The agent directly learns a policy, such as in the REINFORCE algorithm, where the policy is parameterized and adjusted based on the returns.
+
+        - **Actor-Critic methods**: These combine both value-based and policy-based methods, where the actor decides on actions based on the policy, and the critic evaluates the action by computing a value function.
 2. **Model-Based Methods**:
    - These methods involve the agent trying to learn a model of the environment (i.e., predicting the next state and reward based on current state and action).
-   - **Examples**: Dyna-Q, Model Predictive Control (MPC).
+   - Examples:
+
+     - Planning algorithms: The agent uses the model to plan a sequence of actions (e.g., through dynamic programming or Monte Carlo Tree Search).
+
+     -  World models: The agent constructs a model of the environment (a world model) and uses it for both learning and planning. This is used in approaches like model-based reinforcement learning with neural networks.
+
+[Back to Table of Contents](#table-of-contents)
 
 ---
 
@@ -85,11 +118,15 @@ The “deep” in Deep Reinforcement Learning refers to the use of **deep neural
 
 Deep learning techniques help RL to handle problems that would otherwise be intractable with traditional RL methods. The most famous example of DRL is **Deep Q-Networks (DQN)**, which uses a deep neural network to approximate the Q-values in Q-learning.
 
+[Back to Table of Contents](#table-of-contents)
+
 ---
 
 ## Summary
 
 Deep Reinforcement Learning (DRL) is a powerful AI paradigm that combines the trial-and-error learning of reinforcement learning with the expressive power of deep neural networks. It enables agents to learn optimal behaviors in complex, dynamic environments. By balancing exploration and exploitation, and using either model-free or model-based methods, DRL algorithms can be applied to a wide range of tasks. As we continue to explore DRL, it holds promise in fields like robotics, gaming, and autonomous systems.
+
+[Back to Table of Contents](#table-of-contents)
 
 ---
 
@@ -97,3 +134,5 @@ Deep Reinforcement Learning (DRL) is a powerful AI paradigm that combines the tr
 
 - [Reinforcement Learning: An Introduction by Sutton & Barto](http://incompleteideas.net/book/RLbook2020.pdf)
 - [Deep Reinforcement Learning Research Paper](https://arxiv.org/abs/1312.5602)
+
+[Back to Top](#introduction-to-deep-reinforcement-learning)
