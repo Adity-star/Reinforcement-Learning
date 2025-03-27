@@ -61,16 +61,11 @@ The agent progressively learns to land the Lunar Lander with increasing precisio
 
 ---
 
-## Preview Video
+## Lunar Lander Agent Preview
 
 Watch the Lunar Lander agent in action as it learns to land on the Moon 🌕! The video below demonstrates how the agent improves over time:
 
-
-<video width="600" controls>
-  <source src="Intro to RL/replay.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
+https://github.com/user-attachments/assets/37e0325b-902a-4f80-b533-44a09e79ddd0
 
 ---
 
