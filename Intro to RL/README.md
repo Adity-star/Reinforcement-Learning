@@ -11,6 +11,7 @@
 7. [The “Deep” in Deep Reinforcement Learning](#the-deep-in-deep-reinforcement-learning)
 8. [Summary](#summary)
 9. [References](#references)
+10. [Stable-Baselines3 PPO Agent Notebook](https://github.com/Adity-star/Reinforcement-Learning/tree/main/Intro%20to%20RL/PPO%20agent%20on%20Lunar%20Lander%20Environment)
 
 ---
 
