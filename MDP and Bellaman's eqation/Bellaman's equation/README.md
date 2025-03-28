@@ -15,6 +15,7 @@
 7. [Mathematical Formulation](#mathematical-formulation)
 8. [Applications of Bellman’s Equation in RL](#applications-of-bellmans-equation-in-rl)
 9. [Conclusion](#conclusion)
+10. [Summary](3summary)
 
 ---
 
@@ -186,6 +187,10 @@ Bellman’s Equation is a crucial concept in Reinforcement Learning that allows 
 Understanding Bellman’s Equation is essential for grasping how RL algorithms work, and it serves as the foundation for many advanced techniques in the field.
 
 ---
+## Summary
+- The Bellman equation expresses the relationship between the value of a state and the values of its successor states. It can be expressed using a "backup" diagram. Bellman equations exist for both the value function and the action value function.
+- Value functions define an ordering over policies. A policy p1 is better than p2 if v_p1(s) >= v_p2(s) for all states s. For MDPs, there exist one or more optimal policies that are better than or equal to all other policies.
+- The optimal state value function v*(s) is the value function for the optimal policy. Same for q*(s, a). The Bellman Optimality Equation defines how the optimal value of a state is related to the optimal value of successor states. It has a "max" instead of an average.
 
 ## Additional Resources
 
