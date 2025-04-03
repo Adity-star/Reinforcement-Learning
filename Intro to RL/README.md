@@ -12,6 +12,7 @@
 8. [Summary](#summary)
 9. [References](#references)
 10. [Stable-Baselines3 PPO Agent Notebook](https://github.com/Adity-star/Reinforcement-Learning/tree/main/Intro%20to%20RL/PPO%20agent%20on%20Lunar%20Lander%20Environment)
+11. [Reinforcement Learning with huggy](https://github.com/Adity-star/Reinforcement-Learning/tree/main/Intro%20to%20RL/Reinforcement%20Learning%20with%20Huggy)
 
 ---
 
